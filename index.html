@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      background-color: hsl(222, 26%, 31%);
+      color: white;
+      font-family: 'Spartan', sans-serif;
+    }
+
+    .right {
+      float: right;
+      font-size: 7px;
+    }
+
+    .toggle-calc {}
+
+    .screen-calc {
+      text-align: right;
+      font-size: 32px;
+      background-color: hsl(224, 36%, 15%);
+      color: white;
+      border-radius: 5px;
+      border: none;
+      margin-left: -15px;
+      height: 60px;
+      width: 111%;
+      box-sizing: border-box;
+    }
+
+    .keys-calc {
+      font-weight: 32px;
+      background-color: hsl(223, 31%, 20%);
+      border-radius: 5px;
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .keys-calc input {
+      background-color: hsl(30, 25%, 89%);
+      color: hsl(221, 14%, 31%);
+      border-radius: 5px;
+      box-shadow: 0px 1px 1px 1px hsl(28, 16%, 65%);
+      border: none;
+      margin: 5px;
+      width: 20%;
+    }
+
+    .special-keys {
+      width: 45% !important;
+    }
+
+    .cancel-keys {
+      background-color: hsl(225, 21%, 49%) !important;
+      box-shadow: 0px 1px 1px 1px hsl(224, 28%, 35%) !important;
+      color: white !important;
+    }
+
+    .equal {
+      background-color: hsl(6, 63%, 50%) !important;
+      color: white !important;
+      box-shadow: 0px 1px 1px 1px hsl(6, 70%, 34%) !important;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <form name="calc">
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 toggle-calc">
+          <span>calc</span>
+          <span class="right">THEME</span>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <input class="screen-calc" type="text" name="screen" id="screen">
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 keys-calc">
+          <input type="button" value="7" onclick="calc.screen.value += '7'">
+          <input type="button" value="8" onclick="calc.screen.value += '8'">
+          <input type="button" value="9" onclick="calc.screen.value += '9'">
+          <input type="button" value="DEL" class="cancel-keys" onclick="calc.screen.value = calc.screen.value.substr(0,calc.screen.value.length-1)"><br>
+          <input type="button" value="4" onclick="calc.screen.value += '4'">
+          <input type="button" value="5" onclick="calc.screen.value += '5'">
+          <input type="button" value="6" onclick="calc.screen.value += '6'">
+          <input type="button" value="+" onclick="calc.screen.value += '+'"><br>
+          <input type="button" value="1" onclick="calc.screen.value += '1'">
+          <input type="button" value="2" onclick="calc.screen.value += '2'">
+          <input type="button" value="3" onclick="calc.screen.value += '3'">
+          <input type="button" value="-" onclick="calc.screen.value += '-'"><br>
+          <input type="button" value="." onclick="calc.screen.value += '.'">
+          <input type="button" value="0" onclick="calc.screen.value += '0'">
+          <input type="button" value="/" onclick="calc.screen.value += '/'">
+          <input type="button" value="x" onclick="calc.screen.value += '*'"><br>
+          <input value="RESET" type="reset" class="special-keys cancel-keys">
+          <input type="button" value="=" class="special-keys equal" onclick="calc.screen.value = eval(calc.screen.value)">
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </form>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Corneille Frejus</a>.
+  </div>
+</body>
+
+</html>
